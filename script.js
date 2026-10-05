@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── Hero Title: word-by-word slide-in ─────────────────────────
     const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle && !prefersReducedMotion) {
+    if (heroTitle) {
         heroTitle.innerHTML = heroTitle.innerHTML.replace(/(<br\s*\/?>|<[^>]+>.*?<\/[^>]+>|[^\s<]+)/g, (match) => {
             if (match.startsWith('<')) return match;
             return `<span class="hero-word">${match}</span>`;
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ─── Particles Canvas ───────────────────────────────────────────
     // Only runs while the hero is on screen and the tab is visible.
     const canvas = document.getElementById('particles');
-    if (canvas && !prefersReducedMotion) {
+    if (canvas) {
         const ctx = canvas.getContext('2d');
         const connectDistance = 110;
         const connectDistSq   = connectDistance * connectDistance;
